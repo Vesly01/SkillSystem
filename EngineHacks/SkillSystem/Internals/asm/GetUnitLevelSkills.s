@@ -24,12 +24,13 @@ GetUnitLevelSkills:
 	@ This is an improvement over the skill system before march 2019, where each cases were handled separately
 	@ As it makes it easier to hack in (or out) methods of defining level-up skills.
 
-	push {r3, r4-r7} @ save r3 for returning it later
-
+	push {r3, r4-r7, lr} @ save r3 for returning it later
+mov r4, r8 
+push {r4} 
 	push {r1, r2}
 	mov r7, r0 @ var r7 = unit
 	mov r6, r3 @ var r6 = output
-
+mov r8, r3 @ Vesly save start of buffer 
 check_char_skill:
 	@ Checking char skill list
 
@@ -207,12 +208,29 @@ write_class_skill:
 	b continue_class_skill
 
 end_class_skill:
+
+RandomizeSkillLoop: 
+mov r5, r8 @ start of buffer 
+bge TerminateList
+ldrb r0, [r5] 
+add r5, #1 
+cmp r0, #0 
+beq TerminateList @ unnecessary? but whatever 
+mov r1, r7 @ unit 
+bl RandomizeSkill 
+strb r0, [r5] 
+b RandomizeSkillLoop 
+
+TerminateList: 
 	mov  r0, #0 @ terminate list
 	strb r0, [r6]
 
 	pop {r1, r2}
+    pop {r4} 
+    mov r8, r4 
 	pop {r0, r4-r7} @ return output buffer in r0
-	bx lr
+    pop {r1} @ lr 
+	bx r1 
 
 	.pool
 	.align

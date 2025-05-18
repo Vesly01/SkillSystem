@@ -10,9 +10,9 @@ set "source_rom=%~dp0FE8_clean.gba"
 
 set "main_event=%~dp0ROMBuildfile.event"
 
-set "target_rom=%~dp0SkillsTest.gba"
-set "target_ups=%~dp0SkillsTest.ups"
-set "target_sym=%~dp0SkillsTest.sym"
+set "target_rom=%~dp0fe8srr.gba"
+set "target_ups=%~dp0fe8srr.ups"
+set "target_sym=%~dp0fe8srr.sym"
 
 @rem defining tools
 
@@ -61,11 +61,7 @@ echo:
 echo Assembling
 
 cd "%base_dir%EventAssembler"
-ColorzCore A FE8 "-output:%target_rom%" "-input:%main_event%" --nocash-sym
-
-if /I not [%1]==[quick] (
-
-  @rem only do the following if this isn't a make hack quick
+ColorzCore A FE8 "-output:%target_rom%" "-input:%main_event%" --nocash-sym "--build-times"
 
   echo:
   echo Generating patch
@@ -73,7 +69,6 @@ if /I not [%1]==[quick] (
   cd "%base_dir%"
   "%ups%" diff -b "%source_rom%" -m "%target_rom%" -o "%target_ups%"
 
-)
 
 echo:
 echo Generating sym file

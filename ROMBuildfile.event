@@ -1,14 +1,27 @@
 #ifdef _FE8_
+#define SKILLSYS_INSTALLED 
     #include "EAstdlib.event"
+    #include "Extensions/Hack Installation.txt" 
     #include "CustomDefinitions.event"
-//PROTECT $25224
+#include "../SRR_FEGBA/Definitions.event" 
+PROTECT $2A730 $2A7FF
     ORG FreeSpace
-
+    FILL (0x1000000 - FreeSpace)
+    ORG FreeSpace 
     #include "repointedTextTable.event"
-
     //Text first for Text ID definitions
     #include "Text/InstallTextData.event"
     MESSAGE Used text space ends at currentOffset
+    MESSAGE CURRENTOFFSET 
+    ORG 0x1030000
+    #include "../SRR_FEGBA/gfx/Installer.event" 
+    MESSAGE Gfx space ends at currentOffset 
+    #include "../SRR_FEGBA/bgm/Installer.event"
+
+
+
+
+
 
     //CSV tables
     #include "Tables/TableInstaller.event"
@@ -27,8 +40,10 @@
     #include "Maps/MasterMapInstaller.event"
     #endif // USE_TEST_MAP
 	
-	ASSERT (FreeSpaceEnd - currentOffset) // So that you don't overwrite vanilla tables if using default freespace
-	
+    
+	#include "../SRR_FEGBA/RomBuildfile.event" 
+	//#include "../SRR_FEGBA/test negative stats.event" 
+
     MESSAGE Used free space ends at currentOffset
 #else
     ERROR "You are not assembling FE8 events!"

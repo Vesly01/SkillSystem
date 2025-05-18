@@ -29,7 +29,6 @@ AutoloadSkills.lop_adv_buf:
 
 	cmp r0, #0
 	beq AutoloadSkills.end_adv_buf
-
 	add r5, #1
 	b AutoloadSkills.lop_adv_buf
 
@@ -56,6 +55,7 @@ BXIP:
 	bx ip
 
 	.pool
+	.ltorg 
 	.align
 
 EALiterals:

@@ -8,7 +8,7 @@
 // =========================
 
 // If commented, the test map will not be installed.
-#define USE_TEST_MAP
+//#define USE_TEST_MAP
 
 // The amount of attack speed needed to double an opponent.
 #define AS_DOUBLING_THRESHOLD 4
@@ -27,7 +27,7 @@
 // If uncommented, a full str/split will be implemented without replacing any stats
 // TODO: Define an item ID for Spirit Dust (Mag statbooster) in "Strmag/Str Mag Split/Installer.event". Energy Ring is used by default!
 // Item icon for Spirit Dust is included! Define your icon ID in "Strmag/_Master Asm Installer.event". Default is Green Note.
-// #define USE_STRMAG_SPLIT
+//#define USE_STRMAG_SPLIT
 
 // If uncommented, the statscreen will have a moving background similar to FE6 and FE7.
 // Customization of graphical assets is possible in Necessary/ModularStatScreen/Background/Graphics/Graphics.event.
@@ -70,10 +70,10 @@
 #define FREEZE_HACK
 
 //If uncommented, will enable HP Bars.
-#define HP_BARS
+//#define HP_BARS
 
 //If uncommented, will enable Improved Sound Mixer.
-#define IMPROVED_SOUND_MIXER
+//#define IMPROVED_SOUND_MIXER
 
 //If uncommented, will enable L-Toggle Animations.
 #define LTOGGLE_HACK
@@ -91,7 +91,7 @@
 #define MOVEARROW_HACK
 
 //If uncommented, will enable Negative Weapon Wt/Crit Display.
-#define NEGATIVE_WTCRIT_DISPLAY
+//#define NEGATIVE_WTCRIT_DISPLAY
 
 //If uncommented, will enable the battle crit cap
 #define CRIT_CAP
@@ -184,7 +184,7 @@ MESSAGE Please see the README.md there or ask @Vesly for help.
 // If uncommented, the fourth page of the stat screen will include personal information on the character.
 // This information can be edited in the "Personal Data Editor.csv" file.
 // This will automatically enable Narrow Font.
-#define ENABLE_PERSONAL_INFO
+//#define ENABLE_PERSONAL_INFO
 
 // If uncommented, the third page of the stat screen will only show weapon ranks that the unit has a rank in.
 #define ONLY_SHOW_USED_RANKS
@@ -246,10 +246,10 @@ MESSAGE Please see the README.md there or ask @Vesly for help.
 // #define ENABLE_GBA_LETHALITY
 
 // if set to false, only the skill will work, if set to true both the skill and the ability will work
-#define ENABLE_LEGACY_CANTO False
+#define ENABLE_LEGACY_CANTO True
 
 // if commented, enemies with Steal+ will steal as normal in vanilla (ie, the skill will be pretty much useless
-#define ENABLE_AI_STEAL_PLUS
+// #define ENABLE_AI_STEAL_PLUS
 
 // if commented, Steal will no longer be a skill, but a character ability, and Steal+ will require having regular steal
 #define ENABLE_STEAL_SKILL
@@ -277,7 +277,7 @@ MESSAGE Please see the README.md there or ask @Vesly for help.
 // #define DISABLE_CHARGE
 
 //If commented, Triangle Attack will use a skill check instead of a bitflag.
-//#define VANILLA_TRIANGLE_ATTACK
+#define VANILLA_TRIANGLE_ATTACK
 
 //If uncommented, RNG will remain consistent, but enemies will be unable to use Galeforce.
 //The current implementation of Galeforce causes RNG to change when reloading a suspend save.
@@ -290,9 +290,9 @@ MESSAGE Please see the README.md there or ask @Vesly for help.
 #define DOES_BARGAIN_STACK False
 
 //If true, will use the vanilla check in addition to the skill check.
-#define ALSO_USE_VANILLA_DANCE_CHECK False
+#define ALSO_USE_VANILLA_DANCE_CHECK True
 #define ALSO_USE_VANILLA_SUPPLY_CHECK True
-#define ALSO_USE_VANILLA_SUMMON_CHECK False
+#define ALSO_USE_VANILLA_SUMMON_CHECK True
 #define ALSO_USE_VANILLA_STEAL_CHECK True
 
 //If uncommented, Combat Arts will be enabled.
@@ -410,4 +410,4 @@ MESSAGE Please see the README.md there or ask @Vesly for help.
 //If you are using Str/Mag Split, these are instead located in
 //ExternalHacks/StrMagSplit/ModularStatScreen/DisplayGrowthsOptions.
 
-#endif // HAX_CONFIG
+#endif // HAX_CONFIGs
