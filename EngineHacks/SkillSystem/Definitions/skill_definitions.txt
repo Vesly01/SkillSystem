@@ -208,9 +208,9 @@ ArmoredBlowID
 //By Darrman
 HeroesDeathBlowID
 
-//Poison Strike: Deals damage equal to 20% of the enemy's max HP after battle this unit initiates.
-//By Snakey1
-PoisonStrikeID
+//PoisonPoint: Inflict the poison status to your opponent at the end of the battle.
+//By Jester
+PoisonPointID
 
 //Enrage: Inflict berserk status. (Skill% activation)
 //By Sme
@@ -716,6 +716,10 @@ WatchfulID
 //By Jester
 SnowWarningID 255
 
+//Poison Strike: Deals damage equal to 20% of the enemy's max HP after battle this unit initiates.
+//By Snakey1
+PoisonStrikeID
+
 //Veteran: Experience gain is x1.5.
 //By Snerdels
 VeteranID
@@ -842,9 +846,7 @@ ReMoveID
 //By Sme
 GridmasterID
 
-//PoisonPoint: Inflict the poison status to your opponent at the end of the battle.
-//By Jester
-PoisonPointID
+
 
 //Wonder Guard: Cannot be damaged by the same weapon type (e.g. sword vs sword)
 //By Jester

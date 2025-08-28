@@ -146,6 +146,7 @@ gGameSaveChunks:
 	DeclSaveChunk($1128, $00C8, MSa_WriteSupplyItems, MSa_ReadSupplyItems, EMS_CHUNK_CONVOYITEMS)
 	
 	// $11F0
+	// DeclSaveChunk($11f0, $0040, MSa_SaveBonusClaim,   MSa_LoadBonusClaim,   EMS_CHUNK_BONUSCLAIMDATA)
 	
 	// free up to $1344
 
