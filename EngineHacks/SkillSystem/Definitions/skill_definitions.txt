@@ -208,9 +208,11 @@ ArmoredBlowID
 //By Darrman
 HeroesDeathBlowID
 
-//PoisonPoint: Inflict the poison status to your opponent at the end of the battle.
-//By Jester
-PoisonPointID
+
+
+//Pathfinder: Allies within 3 spaces can Canto.
+// By Devisio
+PathfinderID
 
 //Enrage: Inflict berserk status. (Skill% activation)
 //By Sme
@@ -1370,9 +1372,9 @@ TriangleAttackID
 //By Jester
 PastelVeilID
 
-//Pathfinder: Allies within 3 spaces can Canto.
-// By Devisio
-PathfinderID
+//PoisonPoint: Inflict the poison status to your opponent at the end of the battle.
+//By Jester
+PoisonPointID
 
 //Merciless: Guranteed critical hit against poisoned foes.
 //By Jester

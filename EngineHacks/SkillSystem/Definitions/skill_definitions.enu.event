@@ -52,7 +52,7 @@
 #define CertainBlowID 0x34
 #define ArmoredBlowID 0x35
 #define HeroesDeathBlowID 0x36
-#define PoisonPointID 0x37
+#define PathfinderID 0x37
 #define EnrageID 0x38
 #define EternalVanityID 0x39
 #define FailGaleID 0x3A
@@ -419,7 +419,7 @@
 #define AmischeID 0xFF
 #define TriangleAttackID 0xFF
 #define PastelVeilID 0xFF
-#define PathfinderID 0xFF
+#define PoisonPointID 0xFF
 #define MercilessID 0xFF
 #define StoneBodyID 0xFF
 #define PursuerID 0xFF
