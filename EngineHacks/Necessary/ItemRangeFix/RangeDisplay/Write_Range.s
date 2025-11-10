@@ -87,8 +87,8 @@ pop		{r4}
 b		BitfieldMagic
 BallistaCheck:
 @mov		r0,r12
-ldr     r4, =#0x03000006
-ldrb    r0, [r4]
+ldr     r0, =#0x03000006
+ldrb    r0, [r0]
 cmp		r0,#0x0
 beq		EndRangeWrite
 mov		r0,r4
