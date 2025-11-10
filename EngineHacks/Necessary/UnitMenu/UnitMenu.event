@@ -4,7 +4,7 @@
 #include "Extensions/Hack Installation.txt"
 #include "_UnitMenuDefs.event"
 
-#define ChapterMenuWidth 9
+#define ChapterMenuWidth 10
 #define ChapterMenuRightXCoord 20
 
 #define UnitMenuWidth 9
