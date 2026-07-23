@@ -68,6 +68,10 @@ SkillBuffer *MakeSkillBuffer(struct Unit *unit, SkillBuffer *buffer) {
   int unitNum = unit->pCharacterData->number;
   int count = 0, temp = 0;
   buffer->lastUnitChecked = unit->index;
+  if (!IsUnitOnField(unit)) {
+    buffer->skills[count++] = 0;
+    return buffer;
+  }
 
   temp = GetAlwaysSkill(unit);
   if (ValidateSkill(temp)) {
