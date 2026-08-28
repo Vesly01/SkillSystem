@@ -83,6 +83,7 @@ gSaveBlockTypeSizeLookup:
 
 #include "SrcModules/Debuffs.lyn.event" // Debuffs module
 #include "SrcModules/ReadWriteSupplyItems.lyn.event" // Convoy module
+#include "SrcModules/ReadWriteCharPalOverride.lyn.event" // gCharPalOverride module (SRR revise-palette overrides)
 
 #ifdef USE_STRMAG_SPLIT
 	#ifdef STAIRS_ASM
@@ -144,10 +145,14 @@ gGameSaveChunks:
 
 	// Expanded Convoy (still 100 items, but saved durability)
 	DeclSaveChunk($1128, $00C8, MSa_WriteSupplyItems, MSa_ReadSupplyItems, EMS_CHUNK_CONVOYITEMS)
-	
+
 	// $11F0
 	// DeclSaveChunk($11f0, $0040, MSa_SaveBonusClaim,   MSa_LoadBonusClaim,   EMS_CHUNK_BONUSCLAIMDATA)
-	
+
+	// gCharPalOverride (u16[0x46], SRR revise-palette overrides - C_code.c)
+	DeclSaveChunk($11F0, $008C, MSa_WriteCharPalOverride, MSa_ReadCharPalOverride)
+
+	// $127C
 	// free up to $1344
 
 	DeclSaveChunkEnd
@@ -203,9 +208,13 @@ gSuspendSaveChunks:
 
 	// $25AA
 	DeclSaveChunk($2846, $00C8, MSa_WriteSupplyItems, MSa_ReadSupplyItems)  // Convoy Items
-	
-	// ends at $290E
-	// free up to $2E78 ($56A free bytes)
+
+	// $290E
+	// gCharPalOverride (u16[0x46], SRR revise-palette overrides - C_code.c)
+	DeclSaveChunk($290E, $008C, MSa_WriteCharPalOverride, MSa_ReadCharPalOverride)
+
+	// ends at $299A
+	// free up to $2E78 ($4DE free bytes)
 
 	DeclSaveChunk(0, 0, 0, MSu_LoadClaimFlagsFromParentSave) // Load Bonus Claim flags from parent save
 
