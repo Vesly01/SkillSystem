@@ -7,7 +7,7 @@
 #include "../SRR_FEGBA/Definitions.event" 
 // PROTECT $8d170
     ORG FreeSpace
-    FILL (0x1000000 - FreeSpace)
+    FILL (0x9000000 - FreeSpace)
     ORG FreeSpace 
     #include "repointedTextTable.event"
     //Text first for Text ID definitions
