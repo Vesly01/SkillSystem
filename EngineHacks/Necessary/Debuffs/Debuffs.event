@@ -68,7 +68,7 @@ WORD 4
 LukRallyAmount_Link: 
 WORD 8 
 MovRallyAmount_Link: 
-WORD 2 
+WORD 1
 
 
 #define DebuffEntrySize 8 // Number of bytes 
@@ -155,12 +155,14 @@ ArmorMarchBitOffset_Link:
 WORD MiscOffset+3
 VigorDanceBitOffset_Link:
 WORD MiscOffset+4 
+GaleforceBitOffset_Link:
+WORD MiscOffset+5
 //Used with Dragz's Effectiveness Items
 /*
 FlammableBitOffset_Link:
-WORD MiscOffset+5
-DousedBitOffset_Link:
 WORD MiscOffset+6
+DousedBitOffset_Link:
+WORD MiscOffset+7
 */
 
 
@@ -247,13 +249,6 @@ TeamDebuffTables:
 
     // Weapons/Battle
 
-    ORG 0x2B54E
-      SHORT 0x46C0 // nop
-      jumpToHack(damagedThisTurn)
-
-    ORG 0x2B422
-      #incbin "asm/SetHitThisTurn.dmp"
-
     // ORG 0x2C086
       // SHORT 0x46C0 // nop
       // jumpToHack(setDebuffs) // now SealSkills hooks this instead ? 
@@ -262,15 +257,6 @@ TeamDebuffTables:
       callHack_r3(setDebuffs)
 
   POP
-
-
-  ALIGN 4
-  damagedThisTurn:
-    #incbin "asm/SetDamagedThisTurn.dmp"
-
-
-
-   
     
 
 
