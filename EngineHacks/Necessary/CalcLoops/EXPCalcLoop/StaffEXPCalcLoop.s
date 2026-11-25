@@ -6,10 +6,19 @@
 .type ExpLoopStaff, %function
 ExpLoopStaff:
 
-@hook at 802C694 using anything but r2
+@hook at 802C688 using anything but r2
+@hooking at 802C694 overwrote the pop {r4} at 802C69A that the early returns
+@branch to (enemies and max level units), so we do the halving here too
+@r0 = nonzero if exp is halved
 @r2 = current exp value (not capped)
 
 push {r4-r7}
+cmp r0,#0
+beq NoHalve
+lsr r0,r2,#31
+add r0,r2,r0
+asr r2,r0,#1
+NoHalve:
 cmp r2,#100
 ble NoInitialCap
 mov r2,#100
